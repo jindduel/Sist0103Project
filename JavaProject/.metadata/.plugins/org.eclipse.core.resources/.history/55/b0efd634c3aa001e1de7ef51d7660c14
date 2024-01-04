@@ -1,0 +1,18 @@
+package day0104;
+
+import java.util.Scanner;
+
+public class KeyboardIn_14 {
+
+	public static void main(String[] args) {
+		//키보드 입력에 필요한 Scanner 클래스를 import
+		Scanner scan = new Scanner(System.in);
+		
+		String name;
+		int age;
+		
+		System.out.print("이름을 입력해주세요. ");
+
+	}
+
+}
