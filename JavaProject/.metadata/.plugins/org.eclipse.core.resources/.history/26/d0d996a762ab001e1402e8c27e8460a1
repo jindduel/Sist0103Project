@@ -1,0 +1,10 @@
+package day0105;
+
+import java.util.Scanner;
+
+public class KeyboardIn_01 {
+	public static void main(String[] args) {
+		//이름, 핸드폰번호, 주소 입력 후 출력
+		Scanner sc = new Scanner(System.in);
+	}
+}
