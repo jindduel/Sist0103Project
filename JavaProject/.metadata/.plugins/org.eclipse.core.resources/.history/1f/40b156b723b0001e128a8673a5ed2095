@@ -1,0 +1,43 @@
+package day0111;
+
+class Artist {
+	//변수명
+	String artName;
+	String gName;
+	String song;
+	
+	static String gi;
+	static int cnt = 0;
+	
+	//명시적 생성자
+	public void setData(String name, String gname, String song) {
+		artName = name;
+		this.gName = gname;
+		this.song = song;
+	}
+	
+	//출력 메서드
+	
+	public void printInfo() {
+		cnt++;
+		System.out.println("** 아티스트 정보_" + cnt + " **");
+		System.out.println("소속기획사 : " + gi);
+		System.out.println("그룹명 : "  + gName);
+		System.out.println("대표곡 : " + s);
+	}
+}
+
+public class QuizInstance_06 {
+	public static void main(String[] args) {
+		Artist art1 = new Artist();
+		Artist art2 = new Artist();
+		
+		Artist.gi = "하이브";
+
+		art1.setData("하이브", "bts", "버터");
+		art2.setData("하이브", "뉴진스", "어텐션");
+		
+		art1.printInfo();
+		art2.printInfo();
+	}
+}

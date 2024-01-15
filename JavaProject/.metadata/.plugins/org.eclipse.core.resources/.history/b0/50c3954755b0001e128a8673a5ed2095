@@ -1,0 +1,47 @@
+package day0111;
+/*
+ * [직원 1월 급여]
+ * 사원명	기본급	자녀수 초과근무시간 가족수당 시간수당  총급여
+ * ===============================================
+ * 
+ * 각각의 셋터 겟터
+ * 가족수당 : max 2인 / 인당 5만원
+ * 시간수당 : max 10시간 / 초과시간당 3만원 
+ * 실수령액 : 기본급 + 가족수당 + 시간수당
+ * 
+ * 메인에서는 인원수 입력 후 해당 사원에 대한 이름, 기본급, 가족수, 시간 수 입력받고 결과값 출력
+ */
+class Emp{
+	private String sName;
+	private int gPay;
+	private int fSu;
+	private int tSu;
+	
+	int getFamilySudang(int fSu){
+		int n = 0;
+		
+		if(fSu >= 2) n = 100000;
+		else n = fSu * 50000;
+		
+		return n;
+	}
+	
+	int getTimeSudang(int tSu) {
+		int n = 0;
+		
+		if(tSu >= 10) n = 100000;
+		else n = tSu * 30000;
+		
+		return n;
+	}
+	
+	int getTotalPay() {
+		
+	}
+}
+
+public class SawonInstanceScaner_14 {
+	public static void main(String[] args) {
+		
+	}
+}

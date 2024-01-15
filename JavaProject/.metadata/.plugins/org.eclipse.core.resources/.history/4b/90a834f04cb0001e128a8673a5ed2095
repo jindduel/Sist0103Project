@@ -1,0 +1,20 @@
+package day0111;
+
+/*
+ * 메소드 : 접근제한자(public) + 지정예약어(static) + 결과형값 리턴(void) + 메서드명()
+ * 반복적인 코드를 줄여 코드 관리가 쉬움
+ * 하나의 메소드는 한가지 기능만을 수행
+ */
+
+
+public class ExMethod_13 {
+	
+	public static boolean aaa() {
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		boolean a = aaa();
+		System.out.println("a : " + a);
+	}
+}

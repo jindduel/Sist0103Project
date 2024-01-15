@@ -1,0 +1,26 @@
+package day0108;
+
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class OperReview_02 {
+	public static void main(String[] args) {
+		// 띠 : 원숭이부터 시작
+		Scanner sc = new Scanner(System.in);
+		Calendar cal = Calendar.getInstance();
+		
+		String name, n;
+		int myYear, age, year;
+		
+		System.out.print("이름을 입력해주세요. ");
+		name = sc.nextLine();
+		System.out.print("태어난 연도를 입력해주세요. ");
+		myYear = sc.nextInt();
+		year = cal.get(cal.YEAR);
+		age = year - myYear;
+		
+		
+		
+		
+	}
+}

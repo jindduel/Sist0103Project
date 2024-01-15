@@ -1,0 +1,45 @@
+package day0108;
+
+import java.util.Scanner;
+
+public class Quiz_18 {
+	
+	public static void main(String[] args) {
+		quiz_1();
+		quiz_2();
+		quiz_3();
+	}
+	
+	public static void quiz_1() {
+		//1. 반복해서 숫자를 입력하여 양수의 갯수와 음수의 갯수를 구하시오
+		Scanner sc = new Scanner(System.in);
+		
+		int n;
+		int cnt1 = 0, cnt2 = 0;
+		
+
+		System.out.println("숫자를 입력해주세요.");
+		while (true) {
+			n = sc.nextInt();
+			
+			if(n == 0) break;
+			
+			if(n % 2 == 0) cnt2++;
+			else cnt1++;
+			
+		}
+		
+		System.out.println("홀수 : " + cnt1 +  ", 짝수 : " + cnt2);
+		
+	}
+	
+	public static void quiz_2() {
+		//2. 반복해서 점수를 입력하고 갯수 합계 평균 구하기
+		
+	}
+	
+	public static void quiz_3() {
+		//
+		
+	}
+}

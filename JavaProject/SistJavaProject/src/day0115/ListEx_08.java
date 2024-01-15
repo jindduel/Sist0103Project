@@ -1,0 +1,49 @@
+package day0115;
+
+import java.util.List;
+import java.util.Vector;
+
+public class ListEx_08 {
+	
+	public static void print(String title, List<String> list) {
+		System.out.println("**" + title + "**");
+		
+		for(int i = 0 ; i < list.size(); i++) System.out.println(i + " : " + list.get(i));
+		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		/*
+		 * Vector, ArrayList 는 순차, 중복 데이터 가능
+		 * 메소드
+		 * get(idx) 리스트 내의 지정된 위치 값 요소를 돌려줌
+		 * toArray() 리스트 내의 모든 요소를 순서대로 포함 (반환형 : Object[])
+		 * isEmpty() Vector가 비었는지 (반환형 : boolean)
+		 */
+		
+		String[] data = {"햄버거", "피자", "파스타"};
+		
+		//배열의 데이터를 리스트에 넣기
+		List<String> list = new Vector<String>();
+		
+		for(String s : data) list.add(s);
+		print("초기 배열 데이터", list);
+		
+		System.out.println("1번 인덱스 삭제");
+		list.remove(1);
+		print("삭제 후 결과", list);
+		
+		System.out.println("리코타 샐러드 추가");
+		list.add("리코타 샐러드");
+		print("추가 후 데이터", list);
+		
+		System.out.println("1번 인덱스 파스타 -> 스파게티 로 변경");
+		list.set(1, "스파게티");
+		print("변경 후 데이터", list);
+		
+		System.out.println("전체 삭제");
+		list.clear();
+		System.out.println("삭제 후 사이즈 : " + list.size());
+		
+	}
+}

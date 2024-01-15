@@ -1,0 +1,29 @@
+package day0110;
+
+class Mart {
+	private String sang;
+	int su;
+	int dan;
+	
+	static String SHOPNAME = "롯데마트";
+	
+	public void getSang(String sang) {
+		this.sang = sang;
+	}
+	
+	public void getSu(int su) {
+		this.su = su;
+	}
+	
+	public void getDan(int dan) {
+		this.dan = dan;
+	}
+}
+
+
+public class QuizClass_16 {
+	//생성 후 초기 값 주고 출력
+	public static void main(String[] args) {
+		
+	}
+}

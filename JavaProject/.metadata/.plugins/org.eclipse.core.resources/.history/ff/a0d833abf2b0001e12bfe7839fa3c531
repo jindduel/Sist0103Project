@@ -1,0 +1,17 @@
+package day0112;
+
+public class Manager_04 extends Employee_04 {
+	String depart;
+
+	public Manager_04(String name, int sal, String d) {
+		super(name, sal); //부모 생성자 호출
+		this.depart = d; //초기화
+	}
+	
+	//오버라이딩
+	@Override
+	public String getEmployee() {
+		return super.getEmployee() + ", " + depart;
+	}
+	
+}

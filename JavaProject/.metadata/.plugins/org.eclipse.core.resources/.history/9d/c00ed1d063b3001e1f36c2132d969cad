@@ -1,0 +1,37 @@
+package day0115;
+
+import java.util.Scanner;
+
+class Shop {
+	String sangName;
+	int su, dan;
+}
+
+public class ShopArrayList {
+	public void ipgo() {
+		
+	}
+	
+	public void jego() {
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		VectorBoard_09 v = new VectorBoard_09();
+		int n;
+		
+		
+		while (true) {
+			System.out.println("1. 입력  2. 출력  0. 종료");
+			n = Integer.parseInt(sc.nextLine());
+			
+			if(n == 1) v.inputData();
+			else if(n == 2) v.outputData();
+			else {
+				System.out.println("시스템을 종료합니다. ");
+				break;
+			}
+		}
+	}
+}

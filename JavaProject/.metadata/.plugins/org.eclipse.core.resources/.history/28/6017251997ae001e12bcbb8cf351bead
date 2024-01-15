@@ -1,0 +1,14 @@
+package day0109;
+
+public class MathRandom_04 {
+	public static void main(String[] args) {
+		//자바 난수
+		
+		System.out.println("기본 랜덤 수 5개 발생");
+		
+		for(int i = 0; i < 5; i++) {
+			double a = Math.random();
+		}
+		
+	}
+}

@@ -1,0 +1,17 @@
+package day0111;
+
+class Manggo {
+	private String witer;
+	private String subject;
+	private static String msg = "Happy Day!";
+	
+	//
+	
+	
+}
+
+public class ObTest_09 {
+	public static void main(String[] args) {
+		
+	}
+}

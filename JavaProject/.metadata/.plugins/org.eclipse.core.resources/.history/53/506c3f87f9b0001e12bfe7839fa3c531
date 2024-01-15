@@ -1,0 +1,109 @@
+package day0112;
+
+class School {
+	public static final String SCHOOLNAME  = "쌍용고등학교";
+	private String schoolAdd;
+	private int cntStu;
+	private int cntTeach;
+	
+	public School() {
+		this("강남구 역삼동", 120, 10);
+	}
+	
+	public School(String add, int cnts, int cntt) {
+		this.schoolAdd = add;
+		this.cntStu = cnts;
+		this.cntTeach = cntt;
+	}
+	
+	//set & get
+	public String getSchoolAdd() {
+		return schoolAdd;
+	}
+
+	public void setSchoolAdd(String schoolAdd) {
+		this.schoolAdd = schoolAdd;
+	}
+
+	public int getCntStu() {
+		return cntStu;
+	}
+
+	public void setCntStu(int cntStu) {
+		this.cntStu = cntStu;
+	}
+
+	public int getCntTeach() {
+		return cntTeach;
+	}
+
+	public void setCntTeach(int cntTeach) {
+		this.cntTeach = cntTeach;
+	}
+
+	public static String getSchoolname() {
+		return SCHOOLNAME;
+	}
+	
+	//메소드
+	
+	public void printData() {
+		System.out.println("학교 주소 : " + this.schoolAdd);
+		System.out.println("학생 수 : " + this.cntStu + ", 교사 수 : " + this.cntTeach);
+	}
+
+	
+}
+
+class Student extends School {
+	private String stuName;
+	private int grade;
+	
+	public Student() {
+		
+	}
+	
+	public Student(String add, int cnts, int cntt, String sName, int grade) {
+		super(add, cnts, cntt);
+		this.stuName = sName;
+		this.grade = grade;
+	}
+
+	public String getStuName() {
+		return stuName;
+	}
+
+	public void setStuName(String stuName) {
+		this.stuName = stuName;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
+	
+	@Override
+	public void printData() {
+		System.out.println("학교명 :" + SCHOOLNAME);
+		super.printData();
+		System.out.println("학생명 : " + stuName);
+		System.out.println("학년 : " + grade + " 학년");
+	}
+}
+
+class Teacher extends School {
+	
+}
+
+public class inhari_07 {
+	public static void main(String[] args) {
+		Student s1 = new Student();
+		s1.printData();
+		
+		
+		Student s2 = new Student("영등포구", 300, 35, "김숙", 4);
+	}
+}
