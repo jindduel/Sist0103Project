@@ -1,7 +1,0 @@
-package day0115;
-
-public class ShopArrayList {
-	public static void main(String[] args) {
-		
-	}
-}
