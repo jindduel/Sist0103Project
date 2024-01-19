@@ -1,0 +1,30 @@
+package day0119;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class SwingLabelRandom_01  extends JFrame{
+	Container cp;
+	
+	public SwingLabelRandom_01(String title) {
+		super(title);
+		cp = this.getContentPane();
+		
+		this.setBounds(800, 100, 500, 530);
+		cp.setBackground(new Color(204, 204, 204));
+
+		initDesign();
+
+		this.setVisible(true);
+	}
+
+	public void initDesign() {
+		
+	}
+	
+	public static void main(String[] args) {
+		new SwingLabelRandom_01("랜덤컬러생성");
+	}
+}

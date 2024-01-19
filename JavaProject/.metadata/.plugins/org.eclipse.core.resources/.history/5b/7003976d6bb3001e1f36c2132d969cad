@@ -1,0 +1,42 @@
+package day0115;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Messege {
+	public String command;
+	public String to;
+	
+	public Messege(String command, String to) {
+		this.command = command;
+		this.to = to;
+	}
+}
+
+public class book679_Que {
+	public static void main(String[] args) {
+		Queue<Messege> m = new LinkedList<>();
+		
+		m.offer(new Messege("sendMail", "홍길동"));
+		m.offer(new Messege("sendSMS", "신용권"));
+		m.offer(new Messege("sendKaKaotalk", "김자바"));
+		
+		while(!m.isEmpty()) {
+			Messege ms = m.poll();
+			
+			switch (ms.command) {
+			case "sendMail": 
+				System.out.println(ms.to + " 님에게 메일을 보냅니다. ");
+				break;
+			case "sendSNS": 
+				System.out.println(ms.to + " 님에게 SMS을 보냅니다. ");
+				break;
+			case "sendKaKaotalk": 
+				System.out.println(ms.to + " 님에게 카카오톡을 보냅니다. ");
+				break;
+			default:
+				break;
+			}
+		}
+	}
+}

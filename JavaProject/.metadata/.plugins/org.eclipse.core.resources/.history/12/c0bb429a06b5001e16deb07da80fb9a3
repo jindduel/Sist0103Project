@@ -1,0 +1,168 @@
+package day0117;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.spi.FileSystemProvider;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class MyShopList_07 {
+	
+	static final String FILENAME = "C:\\SIST0103\\file\\myshop.txt";
+	List<MyShop> list = new ArrayList<MyShop>();
+	Scanner sc = new Scanner(System.in);
+	
+	public MyShopList_07() {
+		shopFileRead();
+	}
+	
+	//파일 읽기
+	public void shopFileRead() {
+		FileReader fr = null;
+		BufferedReader br = null;
+		
+		try {
+			fr = new FileReader(FILENAME);
+			br = new BufferedReader(fr);
+			
+			while (true) {
+				String shop = br.readLine();
+				
+				if(shop == null) break;
+				
+				String[] data = shop.split(",");
+				
+				String sang = data[0];
+				int su = Integer.parseInt(data[1]);
+				int price = Integer.parseInt(data[2]);
+				int total = su * price;
+				
+				//MyShop 클래스에 저장 1
+//				MyShop s1 = new MyShop();
+//				s1.setSangpum(sang);
+//				s1.setSu(su);
+//				s1.setPrice(price);
+//				s1.setTotal(total);		
+				
+				//저장 2
+				MyShop s = new MyShop(sang, su, price);
+				//s.setTotal(total);
+				
+				list.add(s);
+			}
+			
+			System.out.println("파일에서 총 " + list.size() + "개의 상품 목록을 가져왔습니다! ");
+			
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("파일을 찾을 수 없습니다. ");
+		} catch (IOException e) {
+			// TODO: handle exception
+		} finally {
+			try {
+				br.close();
+				fr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+	
+	
+	//파일 쓰기
+	public void shopFileWrite() {
+		FileWriter fw = null;
+		
+		try {
+			fw = new FileWriter(FILENAME);
+			
+			for(MyShop shop : list) {
+				String s = shop.getSangpum() + "," + shop.getSu() + "," + shop.getPrice() + "\n";
+				fw.write(s);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				fw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+	
+	//MyShop 입력
+	public void shopAdd() {
+		System.out.println("- 추가할 상품 정보 -");
+		System.out.print("상품명 : ");
+		String name = sc.nextLine();
+		System.out.print("수량 : ");
+		int su = Integer.parseInt(sc.nextLine());
+		System.out.print("단가 : ");
+		int dan = Integer.parseInt(sc.nextLine());
+		
+		MyShop shop = new MyShop(name, su, dan);
+		
+		list.add(shop);
+		System.out.println("** 상품 정보가 저장되었습니다. **");
+	}
+	
+	//MyShop 출력
+	public void shopAllDatas() {
+		int total;
+		int num = 0;
+		
+		System.out.println("** 상품 내역 **");
+		System.out.printf("%s\t%s\t%s\t%s\t%s\n", "번호", "상품명", "수량", "단가", "총금액");
+		System.out.println("========================================");
+		
+		for(MyShop shop : list) {
+			total = shop.getSu() * shop.getPrice();
+			System.out.printf("%d\t%s\t%d개\t%d원\t%d원\n", ++num, shop.getSangpum(), shop.getSu(), shop.getPrice(), total);
+		}
+	}
+	
+	public void process() {
+		int num;
+		
+		while (true) {
+			System.out.println("1. 상품 추가  2. 출력  3. 파일 삭제  0. 종료");
+			num = Integer.parseInt(sc.nextLine());
+	
+			switch (num) {
+				case 1:
+					shopAdd();
+					break;
+				case 2:
+					shopAllDatas();
+					break;
+				case 3:
+					break;
+				case 0:
+					System.out.println("프로그램을 종료합니다. ");
+					System.exit(0);
+					break;
+					
+				default :
+					System.out.println("다시 입력해주세요. ");
+					break;
+			}	
+		}
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		MyShopList_07 msl = new MyShopList_07();
+		msl.process();
+	}
+}

@@ -1,0 +1,35 @@
+package day0119;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JRadioButton;
+
+public class SwingRadioCheck_02 extends JFrame{
+	Container cp;
+	JRadioButton[] jb = new JRadioButton[4];
+	JCheckBox[] jc = new JCheckBox[4];
+	Color[] colors = {Color.RED, Color.GREEN, Color.MAGENTA, Color.CYAN};
+	
+	public SwingRadioCheck_02(String title) {
+		super(title);
+		cp = this.getContentPane();
+		
+		this.setBounds(800, 100, 500, 400);
+		cp.setBackground(new Color(204, 204, 204));
+
+		initDesign();
+
+		this.setVisible(true);
+	}
+
+	public void initDesign() {
+		
+	}
+	
+	public static void main(String[] args) {
+		new SwingRadioCheck_02("스윙 라디오 체크박스 2");
+	}
+}

@@ -1,0 +1,44 @@
+package day0118;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class SwingColor_11 extends JFrame implements ActionListener{
+	Container cp;
+	JButton[] btn = new JButton[5];
+	
+	
+	public SwingColor_11(String title) {
+		super(title);
+		cp = this.getContentPane();
+		
+		this.setBounds(800, 100, 300, 300);
+		cp.setBackground(new Color(204, 204, 204));
+
+		initDesign();
+
+		this.setVisible(true);
+	}
+
+	public void initDesign() {
+
+		this.setLayout(null);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static void main(String[] args) {
+		new SwingColor_11("글자색 바꾸기");
+	}
+
+}
+

@@ -1,0 +1,13 @@
+package day0118;
+
+import javax.swing.JFrame;
+
+public class SwingGibon_01 extends JFrame {
+	
+	public SwingGibon
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

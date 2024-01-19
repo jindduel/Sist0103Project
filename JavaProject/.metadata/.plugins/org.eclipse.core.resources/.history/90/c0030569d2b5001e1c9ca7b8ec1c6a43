@@ -1,0 +1,31 @@
+package day0118;
+
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class SwingTextF_10  extends JFrame{
+	Container cp;
+
+	public SwingTextF_10(String title) {
+		super(title);
+		cp = this.getContentPane();
+
+		this.setBounds(800, 100, 500, 300);
+		cp.setBackground(new Color(204, 204, 204));
+
+		initDesign();
+
+		this.setVisible(true);
+	}
+
+	public void initDesign() {
+
+	}
+
+	public static void main(String[] args) {
+		new SwingTextF_10("텍스트 필드 공부_10");
+	}
+}
+
